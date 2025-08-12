@@ -13,19 +13,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.32.8'
 
-      - name: Change to project directory
-        run: cd flutter_application_caculator
-
+      # 모든 run 명령어 앞에 'cd [프로젝트 폴더] &&'를 추가합니다.
       - name: Flutter Dependencies
-        run: flutter pub get
+        run: cd flutter_application_caculator && flutter pub get
 
       - name: Run Flutter Tests
-        run: flutter test
+        run: cd flutter_application_caculator && flutter test
 
       - name: Build Android App (optional)
-        run: flutter build apk
+        run: cd flutter_application_caculator && flutter build apk
