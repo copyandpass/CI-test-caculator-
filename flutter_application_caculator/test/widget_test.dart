@@ -1,7 +1,8 @@
-import 'package:flutter/material.dart'; 
+// test/widget_test.dart
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:flutter_application_caculator/main.dart';
+import 'package:flutter_application_caculator/main.dart'; // main.dart 파일 경로를 확인하세요.
 
 void main() {
   testWidgets('Calculator UI Test', (WidgetTester tester) async {
