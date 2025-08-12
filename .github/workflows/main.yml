@@ -1,4 +1,3 @@
-# .github/workflows/main.yml
 name: Flutter CI
 
 on:
@@ -10,13 +9,17 @@ on:
       - main
 
 jobs:
-  build_and_test:
+  build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
+
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.8' # 사용 중인 Flutter 버전에 맞게 수정하세요.
+          flutter-version: '3.32.8'
+
+      - name: Change to project directory
+        run: cd flutter_application_caculator
 
       - name: Flutter Dependencies
         run: flutter pub get
@@ -24,5 +27,5 @@ jobs:
       - name: Run Flutter Tests
         run: flutter test
 
-      - name: Build Flutter App (optional)
+      - name: Build Android App (optional)
         run: flutter build apk
